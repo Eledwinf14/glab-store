@@ -1,0 +1,59 @@
+<h1>*ngFor</h1>
+<input type="text" [(ngModel)]="newProduct" />
+<button (click)="addProducto()">add producto</button>
+<ul>
+  <li *ngIf="productos.length === 0">carrito vacio</li>
+  <li *ngFor="let lista of productos; index as i" class="li">
+    {{i}} {{lista}}
+    <button (click)="deleteP(i)">delete</button>
+  </li>
+</ul>
+<ul>
+  <li *ngIf="producticos.length === 0">carrito vacio</li>
+  <li *ngFor="let p of producticos; index as i " class="li">
+    {{i}} {{p}}
+    <button (click)="deleteM(i)">delete</button>
+  </li>
+</ul>
+<h1>*ngif</h1>
+<input type="text" [(ngModel)]=" persona.nombre" />
+<p *ngIf="persona.nombre === 'Eduin' ">hola Eduin</p>
+<p *ngIf="persona.nombre === 'fabian'  && persona.age ===18;else elseBlock">hola Fabian</p>
+<ng-template #elseBlock>
+  <p>bloque else error</p>
+</ng-template>
+<hr />
+<h1>Ngmodel</h1>
+<p>nombre {{persona.nombre}}</p>
+<input type="text" required #nameinput="ngModel" [(ngModel)]=" persona.nombre" />
+<p>valid:{{nameinput.valid}}</p>
+<p>edad {{persona.age}}</p>
+<input type="number" min="10" required #ageinput="ngModel" [(ngModel)]=" persona.age" />
+<p>{{'holamundo'.repeat(5)}}</p>
+<p>valid:{{ageinput.valid}}</p>
+<h3>hola soy string interpolation {{name}} y tengo {{age}}</h3>
+<h1>Eventos</h1>
+<img src={{img}} alt="image">
+<img [src]="img" alt="image">
+<button [disabled]="btnDisabled">Enviar</button>
+<h1>propiedades</h1>
+<button [disabled]="btnDisabled">Enviar</button>
+<input type="text" [value]="name">
+<progress max="100" [value]="persona.age"></progress>
+<h3>soy el property binding</h3><input type="text" [value]="persona.age">
+<button [disabled]="btnDisabled">Enviar</button>
+<p>edad{{persona.age}}</p>
+<button (click)="increaseAge()">subir edad</button>
+<button (click)="toggleButton()">toggle</button>
+<div class="box" (scroll)="onScroll($event)">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolorum a harum repellendus odio culpa dolor ipsum
+    porro cupiditate error! Vitae architecto, iusto repudiandae sunt facere aspernatur autem natus officia!</p>
+</div>
+<p>nombre: {{persona.nombre}}</p>
+<input type="text" [value]="name" (keyup)="changeName($event)">
+
+<div class="div" style="display: flex;flex-direction: row;">
+  <ul class="navega" *ngFor="let producto of productos">
+    <li><p>{{producto.name}}</p></li>
+    <li><img width="50px" [src]="producto.image"></li>
+  </ul>

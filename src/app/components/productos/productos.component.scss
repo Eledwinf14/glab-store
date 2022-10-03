@@ -1,0 +1,55 @@
+.princii{
+  display: flex;
+  flex-direction: row;
+  width: 130%;
+}
+.productos--grid{
+  display: flex;
+  flex-direction: column;
+  width: 76%;
+  margin-right: 0%;
+  padding-right: 5%;
+
+}
+.precio{
+  display: block;
+  width: 24%;
+  text-align: center;
+  font-size: 1.5vw;
+  background-color:whitesmoke;
+  margin-left: 0;
+  margin-right: 0%;
+  padding-top: -40%;
+  margin-top: -16%;
+  border: solid;
+  border-top-color: transparent;
+  border-right-color:transparent ;
+  border-left-color: #d1d5db;
+
+}
+@media screen and (min-width: 20em) and (max-width: 63.9em){
+  .princii{
+    display: block;
+    width: 100%;
+    .productos--grid{
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(4,1fr);
+      grid-gap: 15px;
+
+    }
+    .precio{
+      display: block;
+      width: 100%;
+    }
+  }
+
+
+}
+@media screen and (min-width: 64em){
+  .productos--grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 15px;
+  }
+}

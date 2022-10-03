@@ -1,0 +1,56 @@
+<div class="show-mobile">
+  <div>
+    <button (click)="toggleMenu()">
+      <img width="40px" src="./assets/icons/menu-hamburguesa.png" alt="menu">
+    </button>
+    <a  href="">
+      <img width="60px" src="./assets/icons/logo.png" alt="logo">
+    </a>
+    <a  href="">
+      <img width="40px" src="./assets/icons/car.jpg" alt="logo">
+    </a>
+  </div>
+  <div class="side-menu" [class.active]="activeMenu">
+    <button (click)="toggleMenu()">Close</button>
+    <ul>
+      <li><a href="">All</a></li>
+      <li><a href="">Categories</a></li>
+      <li><a href="">Productos</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="hide-mobile">
+  <div>
+    <nav>
+      <a class="logo" href="">
+        <img width="35px" src="./assets/icons/menu-hamburguesa.png" alt="logo">
+      </a>
+     <h1><b>Ckuckwudy &nbsp;</b></h1>
+      <ul>
+        <li><a href="">All</a></li>
+        <li><a href="">Categories</a></li>
+        <li><a href="">Products</a></li>
+      </ul>
+      <div class="container">
+        <div class="row height d-flex justify-content-center align-items-center">
+          <div class="col-md-6">
+            <div class="form">
+              <i class="fa fa-search"></i>
+              <input type="text" class="form-control form-input" placeholder="Search">
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="info">
+      <div class="account"> <img width="15px" src="../../../assets/images/logout.png" alt="">nicolas@nicolas.com</div>
+      <div>
+        <a href="">
+          <img width="40px" src="./assets/icons/car.jpg" alt="logo">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
