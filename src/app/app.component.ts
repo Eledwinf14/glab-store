@@ -11,6 +11,7 @@ import { UsersService } from "./services/users.service";
 })
 export class AppComponent {
   shoppingCart: Producto[] = [];
+  userLog= {};
   TotalShopping = 0;
   productos: Producto[] = [
     {
@@ -86,12 +87,7 @@ export class AppComponent {
         "amount": 1
     }
 ]
-  datosUser= {
-    correo: "pruebaG-lab@gmail.com",
-    password: 123456789,
-    direccion: "bogota calle 100"
-  };
-  newProduct = '';
+
   categorias = [
       {
           "id": 1,
@@ -141,16 +137,16 @@ onLoaded(img:string){
 }
 constructor(private storeService: StoreService, public userService:UsersService){
 this.shoppingCart =  this.storeService.getshoppingCart();
-this.datosUser;
 }
 onAddToShopping(productos:Producto){
   console.log(productos);
   this.storeService.addProduct(productos);
   this.TotalShopping= this.storeService.getTotal();
   }
-  getUserLoggued(){
+  getUserLogged(){
     this.userService.getUser().subscribe(user => {
-      console.log(user);
-    });
-  }
+    this.userLog=user;
+    console.log(this.userLog);
+      });
+    }
 }

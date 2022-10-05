@@ -14,9 +14,8 @@ export class StoreService {
 
   constructor() { }
 
-  addProduct(productos:Producto){
+  addProduct(productos:Producto,){
     let Conproduct= this.shoppingCart.filter(x => x.id == productos.id);
-
     console.log(Conproduct,1);
     if (Conproduct.length>0) {
       let index:number = this.shoppingCart.findIndex(x => x.id == productos.id);

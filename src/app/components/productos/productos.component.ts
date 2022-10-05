@@ -103,6 +103,9 @@ eliminarToCart(){
   this.storeService.removeProduct();
   this.TotalShopping = this.storeService.getTotal();
 }
+checkP() {
+  return alert("Pedido Realizado");
+}
 
 
 }

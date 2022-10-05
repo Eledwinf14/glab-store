@@ -12,11 +12,12 @@
       <img class="productosGrid" width="50px" [src]="listShop.image">
       <h4>{{listShop.name}};</h4>
       <h4>{{listShop.price}}</h4>
-      <h4>{{listShop.amount}}</h4>
+      <h4>X ({{listShop.amount}})</h4>
       </button>
     </div>
-    <div *ngIf="shoppingCart.length === 0"><button  disabled class="checkout">Checkout→</button></div>
-    <div *ngIf="shoppingCart.length >= 1"><button class="checkout">Checkout→</button></div>
+    <div *ngIf="shoppingCart.length === 0"><button disabled class="checkout">Checkout→</button>
+     </div>
+    <div *ngIf="shoppingCart.length >= 1"><button   (click)="checkP()"  class="checkout">Checkout→</button></div>
 
   </div>
 </div>
