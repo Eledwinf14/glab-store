@@ -1,6 +1,6 @@
-<div class="login">
+<div class="register">
   <form class="custom-form" method="post">
-    <h1>Login</h1>
+    <h1>Register</h1>
     <input
       type="email"
       [(ngModel)]="email"
@@ -15,6 +15,13 @@
       placeholder="Password"
       required="required"
     />
-    <button type="submit" (click)="login()">Log in</button>
+    <input
+      type="password"
+      [(ngModel)]="confirmPassword"
+      name="password"
+      placeholder="Repeat the password"
+      required="required"
+    />
+    <button type="submit" (click)="register()">Register</button>
   </form>
 </div>

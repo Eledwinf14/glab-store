@@ -15,7 +15,8 @@ export class ProductoComponent implements OnInit {
       qualification: 0,
       time: '',
       price: 0,
-      image: ''
+      image: '',
+      amount: 0
     }
 @Output() addedProduct= new EventEmitter<Producto>();
   constructor() { }
@@ -24,6 +25,7 @@ export class ProductoComponent implements OnInit {
   }
   onAddCart(){
 this.addedProduct.emit(this.productos);
+
   }
 
 }

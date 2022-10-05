@@ -4,16 +4,19 @@
     </app-producto>
   </div>
   <div class="precio">
-    <div *ngFor="let listShop of ShoppingCart">
-      <button (click)="eliminarToCart()">
-      <img width="50px" [src]="listShop.image">
+    <div class="total"><h1># Number of orders: {{shoppingCart.length}}</h1>
+      <h1>Total to pay: ${{TotalShopping}}</h1>
+    </div>
+    <div *ngFor="let listShop of shoppingCart">
+      <button class="buttonPed" (click)="eliminarToCart()">
+      <img class="productosGrid" width="50px" [src]="listShop.image">
       <h4>{{listShop.name}};</h4>
       <h4>{{listShop.price}}</h4>
+      <h4>{{listShop.amount}}</h4>
       </button>
-
     </div>
-    <hr style="width: 100%;">
-    <h1># Number of orders: {{ShoppingCart.length}}</h1>
-    <h1>Total to pay: ${{TotalShopping}}</h1>
+    <div *ngIf="shoppingCart.length === 0"><button  disabled class="checkout">Checkout→</button></div>
+    <div *ngIf="shoppingCart.length >= 1"><button class="checkout">Checkout→</button></div>
+
   </div>
 </div>

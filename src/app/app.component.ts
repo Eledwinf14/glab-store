@@ -9,16 +9,17 @@ import { FormsModule } from "@angular/forms";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  ShoppingCart: Producto[] = [];
+  shoppingCart: Producto[] = [];
   TotalShopping = 0;
-  productos: Producto [] = [
+  productos: Producto[] = [
     {
         "id": 1,
         "name": "Filete de ternera con salsa",
         "qualification": 4.9,
         "time": "25-30min",
         "price": 14.99,
-        "image": "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
+        "image": "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
+        "amount": 1
     },
     {
         "id": 2,
@@ -26,7 +27,8 @@ export class AppComponent {
         "qualification": 4.7,
         "time": "20-25min",
         "price": 9.99,
-        "image": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
+        "image": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
+        "amount": 1
     },
     {
         "id": 3,
@@ -34,7 +36,8 @@ export class AppComponent {
         "qualification": 4.6,
         "time": "25-30min",
         "price": 13.99,
-        "image": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
+        "image": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
+        "amount": 1
     },
     {
         "id": 4,
@@ -42,7 +45,8 @@ export class AppComponent {
         "qualification": 4.5,
         "time": "25-30min",
         "price": 15.99,
-        "image": "https://images.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
+        "image": "https://images.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
+        "amount": 1
     },
     {
         "id": 5,
@@ -50,7 +54,8 @@ export class AppComponent {
         "qualification": 4.8,
         "time": "15-20min",
         "price": 6.99,
-        "image": "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
+        "image": "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
+        "amount": 1
     },
     {
         "id": 6,
@@ -58,7 +63,8 @@ export class AppComponent {
         "qualification": 4.7,
         "time": "10-15min",
         "price": 9.99,
-        "image": "./assets/images/sandwish.jpeg"
+        "image": "https://images.pexels.com/photos/1600711/pexels-zphoto-1600711.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
+        "amount": 1
     },
     {
         "id": 7,
@@ -66,7 +72,8 @@ export class AppComponent {
         "qualification": 4.4,
         "time": "15-25min",
         "price": 12.99,
-        "image": "https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
+        "image": "https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
+        "amount": 1
     },
     {
         "id": 8,
@@ -74,47 +81,16 @@ export class AppComponent {
         "qualification": 4.6,
         "time": "10-15min",
         "price": 14.99,
-        "image": "https://images.pexels.com/photos/156114/pexels-photo-156114.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
+        "image": "https://images.pexels.com/photos/156114/pexels-photo-156114.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
+        "amount": 1
     }
 ]
-
-  title = 'glab-store';
-  name= 'eduin';
-  age = 28;
-  img = 'https://cdn.atomix.vg/wp-content/uploads/2014/12/naruto03.jpg'
-  btnDisabled = true;
-  persona ={
-    nombre: 'jose',
-    avatar: this.img,
-    age: this.age
-  }
-  toggleButton(){
-    this.btnDisabled = !this.btnDisabled;
-  }
-  increaseAge(){
-    this.persona.age +=1;
-
-  }
-  onScroll(event:Event){
-    const elemento= event.target as HTMLElement;
-    console.log(elemento.scrollTop);
-  }
-  changeName(event:Event){
-    const elemento= event.target as HTMLInputElement;
-    this.persona.nombre = elemento.value;
-  }
-  addProducto(){
-   this.producticos.push(this.newProduct);
-  this.newProduct = '';
-  }
-  deleteM(index:number){
-    this.producticos.splice(index);
-  }
-
+  datosUser= {
+    correo: "pruebaG-lab@gmail.com",
+    password: 123456789,
+    direccion: "bogota calle 100"
+  };
   newProduct = '';
-  producticos= [
-   "michy", "toby"
-  ];
   categorias = [
       {
           "id": 1,
@@ -163,7 +139,8 @@ onLoaded(img:string){
   console.log('log padre',img);
 }
 constructor(private storeService: StoreService){
-this.ShoppingCart =  this.storeService.getShoppingCart();
+this.shoppingCart =  this.storeService.getshoppingCart();
+this.datosUser;
 }
 onAddToShopping(productos:Producto){
   console.log(productos);

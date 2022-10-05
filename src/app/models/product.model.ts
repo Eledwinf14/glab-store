@@ -6,6 +6,7 @@ export interface Producto
     time: string;
     price: number;
     image: string;
+    amount: number;
 
   }
 

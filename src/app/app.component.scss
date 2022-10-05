@@ -22,6 +22,7 @@
   align-items: center;
   align-content: center;
   width: 28%;
+  height: 30%;
   margin-top: 0%;
   margin-bottom: 0%;
   padding-top: 6%;
@@ -32,8 +33,32 @@
   border-right-color: transparent;
   border-left-color: #d1d5db;
   border-bottom-color:transparent ;
-  text-align: initial;
+  text-align: start;
   align-content: center;
+  .datosP{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 70px;
+    background-color: #660fcae0;
+    color: white;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    text-align: right;
+    padding-left: 10%;
+    align-items: center;
+    align-content: center;
+    margin-top: -10px;
+    padding-top: 15px;
+  .relojA{
+    max-width: 20px;
+  }
+  .timer{
+    display: flex;
+    flex-direction: row;
+  }
+  }
 
 }
 
@@ -169,7 +194,7 @@ ul {
 .menu{
   display: flex;
   flex-direction: column;
-  margin-top: 5%;
+  margin-top: 1%;
   text-align: left;
   margin-left: 6%;
   margin-bottom: 3%;
@@ -196,11 +221,11 @@ h1{
   background-color: antiquewhite;
   border-radius: 50%;
   border: 0;
-  height: 8vw;
-  width: 100%;
+  height: 5vw;
+  width: 90%;
 }
 .buttonC .imgCat{
-  width: 8vw;
+  width: 40px;
 }
 .buttonC:focus{
   background-color: #f35d06;
@@ -259,17 +284,18 @@ h1{
 
       .buttonC{
         width: 70%;
+
+        .imgCat{
+          width: 10vw;
+        }
       }
-      .imgCat{
-        width: 10vw;
-      }
+
       .pList{
         align-items: center;
         align-content: center;
         display: flex;
         flex-direction: column;
         display: flex;
-        flex-direction: column;
       }
 
     }
@@ -313,7 +339,7 @@ font-size: 0.7vw;
       display: block;
     }}
   h1{
-    font-size: 2.5vw;
+    font-size: 2vw;
   }
   h2{
     font-size: 2.2vw;

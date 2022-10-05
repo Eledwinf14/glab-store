@@ -9,16 +9,17 @@ import { StoreService } from "../../services/store.service";
 })
 export class ProductosComponent implements OnInit {
   miCarritoSinDuplicados: Producto[]=[];
-  ShoppingCart: Producto[] = [];
+  shoppingCart: Producto[] = [];
   TotalShopping= 0;
-  productos: Producto [] = [
+  productos: Producto[] = [
     {
         "id": 1,
         "name": "Filete de ternera con salsa",
         "qualification": 4.9,
         "time": "25-30min",
         "price": 14.99,
-        "image": "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
+        "image": "https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
+        "amount": 1
     },
     {
         "id": 2,
@@ -26,7 +27,8 @@ export class ProductosComponent implements OnInit {
         "qualification": 4.7,
         "time": "20-25min",
         "price": 9.99,
-        "image": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
+        "image": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
+        "amount": 1
     },
     {
         "id": 3,
@@ -34,7 +36,8 @@ export class ProductosComponent implements OnInit {
         "qualification": 4.6,
         "time": "25-30min",
         "price": 13.99,
-        "image": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
+        "image": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
+        "amount": 1
     },
     {
         "id": 4,
@@ -42,7 +45,8 @@ export class ProductosComponent implements OnInit {
         "qualification": 4.5,
         "time": "25-30min",
         "price": 15.99,
-        "image": "https://images.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
+        "image": "https://images.pexels.com/photos/46239/salmon-dish-food-meal-46239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
+        "amount": 1
     },
     {
         "id": 5,
@@ -50,7 +54,8 @@ export class ProductosComponent implements OnInit {
         "qualification": 4.8,
         "time": "15-20min",
         "price": 6.99,
-        "image": "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
+        "image": "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
+        "amount": 1
     },
     {
         "id": 6,
@@ -58,7 +63,8 @@ export class ProductosComponent implements OnInit {
         "qualification": 4.7,
         "time": "10-15min",
         "price": 9.99,
-        "image": "./assets/images/sandwish.jpeg"
+        "image": "https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "amount": 1
     },
     {
         "id": 7,
@@ -66,7 +72,8 @@ export class ProductosComponent implements OnInit {
         "qualification": 4.4,
         "time": "15-25min",
         "price": 12.99,
-        "image": "https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
+        "image": "https://images.pexels.com/photos/262959/pexels-photo-262959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
+        "amount": 1
     },
     {
         "id": 8,
@@ -74,12 +81,13 @@ export class ProductosComponent implements OnInit {
         "qualification": 4.6,
         "time": "10-15min",
         "price": 14.99,
-        "image": "https://images.pexels.com/photos/156114/pexels-photo-156114.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440"
+        "image": "https://images.pexels.com/photos/156114/pexels-photo-156114.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
+        "amount": 1
     }
 ]
   constructor(private storeService: StoreService)
   {
-this.ShoppingCart = this.storeService.getShoppingCart();
+this.shoppingCart = this.storeService.getshoppingCart();
 this.TotalShopping = this.storeService.getTotal();
   }
 
