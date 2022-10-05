@@ -27,7 +27,7 @@ export class UsersService {
   getUserLogged() {
     const token = this.getToken();
   }
-  logout(){
+  logout() {
     return this.cookies.delete("token");
 
   }

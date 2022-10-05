@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{Producto} from '../../models/product.model';
 import { StoreService } from "../../services/store.service";
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-productos',
@@ -8,9 +9,10 @@ import { StoreService } from "../../services/store.service";
   styleUrls: ['./productos.component.scss']
 })
 export class ProductosComponent implements OnInit {
+  titularAlert: string = "";
   miCarritoSinDuplicados: Producto[]=[];
   shoppingCart: Producto[] = [];
-  TotalShopping= 0;
+  totalShopping= 0;
   productos: Producto[] = [
     {
         "id": 1,
@@ -88,7 +90,7 @@ export class ProductosComponent implements OnInit {
   constructor(private storeService: StoreService)
   {
 this.shoppingCart = this.storeService.getshoppingCart();
-this.TotalShopping = this.storeService.getTotal();
+this.totalShopping = this.storeService.getTotal();
   }
 
   ngOnInit(): void {
@@ -97,14 +99,21 @@ this.TotalShopping = this.storeService.getTotal();
 onAddToShopping(productos:Producto){
 console.log(productos);
 this.storeService.addProduct(productos);
-this.TotalShopping= this.storeService.getTotal();
+this.totalShopping= this.storeService.getTotal();
 }
 eliminarToCart(){
   this.storeService.removeProduct();
-  this.TotalShopping = this.storeService.getTotal();
+  this.totalShopping = this.storeService.getTotal();
 }
 checkP() {
-  return alert("Pedido Realizado");
+  this.titularAlert=("Estamos preparando tu pedido");
+  return swal.fire({
+    icon: 'success',
+    title: 'Pedido confirmado',
+    text: this.titularAlert,
+    imageUrl: 'https://c.tenor.com/J5M8QAw4s3YAAAAC/tapas2go-isu-pedido.gif',
+  imageHeight: 300,
+  });
 }
 
 

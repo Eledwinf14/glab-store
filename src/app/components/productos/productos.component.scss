@@ -1,9 +1,10 @@
-.princii{
+.princii {
   display: flex;
   flex-direction: row;
   width: 130%;
 }
-.productos--grid{
+
+.productos--grid {
   display: flex;
   flex-direction: column;
   width: 76%;
@@ -11,86 +12,100 @@
   padding-right: 5%;
 
 }
-.precio{
+
+.precio {
   display: block;
   width: 24%;
   text-align: center;
   font-size: 1.5vw;
-  background-color:whitesmoke;
+  background-color: whitesmoke;
   margin-left: 0;
   margin-right: 0%;
   padding-top: -40%;
   margin-top: -10%;
   border: solid;
   border-top-color: transparent;
-  border-right-color:transparent ;
+  border-right-color: transparent;
   border-left-color: #d1d5db;
-  .checkout{
-    border-radius:  25% 0 25%  0;
+
+  .checkout {
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px 0 0 30px;
     background-color: gold;
     width: 60%;
-    height: 80px;
+    height: 60px;
     float: right;
     border: none;
   }
-  .checkout:hover{
+
+  .checkout:hover {
     background-color: greenyellow;
   }
-  .checkout:focus{
+
+  .checkout:focus {
     background-color: darkblue;
   }
-  .checkout:disabled{
+
+  .checkout:disabled {
     background-color: transparent;
     border: none;
   }
-.buttonPed{
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  cursor: pointer;
-  background-color: greenyellow;
-  border: solid;
-  border-color: whitesmoke;
-  width: 200px;
-  height: 100px;
-  border-radius: 15px;
-  font-size: 0.9vw;
-  margin-left: 65px;
- .img{
-  width: 80%;
- }}
-.buttonPed:hover{
-  cursor: pointer;
-  background-color: red;
-  border: none;
+
+  .buttonPed {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: greenyellow;
+    border: solid;
+    border-color: whitesmoke;
+    width: 200px;
+    height: 100px;
+    border-radius: 15px;
+    font-size: 0.9vw;
+    margin-left: 65px;
+
+    .img {
+      width: 80%;
+    }
+  }
+
+  .buttonPed:hover {
+    cursor: pointer;
+    background-color: red;
+    border: none;
+  }
+
+  .buttonPed:focus {
+    cursor: pointer;
+    background-color: red;
+    border: none;
+  }
 }
-.buttonPed:focus{
-  cursor: pointer;
-  background-color: red;
-  border: none;
-}
-}
-@media screen and (min-width: 10em) and (max-width: 63.9em){
-  .princii{
+
+@media screen and (min-width: 10em) and (max-width: 63.9em) {
+  .princii {
     display: flex;
     flex-direction: column;
     width: 100%;
 
-    .precio{
+    .precio {
       margin-top: 5%;
       display: grid;
       flex-direction: column;
       width: 100%;
-      grid-template-columns: repeat(1,1fr);
+      grid-template-columns: repeat(1, 1fr);
       grid-gap: 10px;
       border-top-color: #d1d5db;
       border: solid;
-      .h4{
+
+      .h4 {
         font-size: 5vw;
       }
 
-      .buttonPed{
+      .buttonPed {
         display: flex;
         flex-direction: column;
         align-content: center;
@@ -106,32 +121,37 @@
         margin-top: 2%;
         margin-left: 70px;
 
-       .img{
-        width: 100%;
-       }}
-       .productosGrid{
+        .img {
+          width: 100%;
+        }
+      }
+
+      .productosGrid {
         width: 50%;
-       }
-       .total{
+      }
+
+      .total {
         font-size: medium;
-       }
+      }
 
     }
-    .productos--grid{
+
+    .productos--grid {
       display: grid;
       margin-top: 4%;
       width: 100%;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(3, 1fr);
       grid-gap: 10px;
     }
   }
 
 
 }
-@media screen and (min-width: 64em){
-  .productos--grid{
+
+@media screen and (min-width: 64em) {
+  .productos--grid {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 15px;
   }
 }
