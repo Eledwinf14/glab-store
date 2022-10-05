@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { StoreService } from "../app/services/store.service";
 import{Producto} from "../app/models/product.model";
 import { FormsModule } from "@angular/forms";
+import { UsersService } from "./services/users.service";
 
 @Component({
   selector: 'app-root',
@@ -138,7 +139,7 @@ imgParent="";
 onLoaded(img:string){
   console.log('log padre',img);
 }
-constructor(private storeService: StoreService){
+constructor(private storeService: StoreService, public userService:UsersService){
 this.shoppingCart =  this.storeService.getshoppingCart();
 this.datosUser;
 }
@@ -146,5 +147,10 @@ onAddToShopping(productos:Producto){
   console.log(productos);
   this.storeService.addProduct(productos);
   this.TotalShopping= this.storeService.getTotal();
+  }
+  getUserLoggued(){
+    this.userService.getUser().subscribe(user => {
+      console.log(user);
+    });
   }
 }

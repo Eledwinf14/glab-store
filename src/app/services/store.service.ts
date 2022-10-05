@@ -26,31 +26,15 @@ export class StoreService {
       console.log(this.shoppingCart);
 
     }
-
-    /*console.log(this.shoppingCart);
-    if (this.shoppingCart.length>=1) {
-      this.shoppingCart.forEach((element) => {
-        if(element.id == productos.id){
-          element.amount++;
-          return;
-        }else{this.shoppingCart.push(productos);
-        return;}
-      });
-    } else {
-      this.shoppingCart.push(productos);
-    }*/
-
-
-    this.myCart.next(this.shoppingCart);
-
   }
   removeProduct(){
-    this.shoppingCart.pop();
-    this.myCart.next(this.shoppingCart);
-    this.shoppingCart.splice(0);
+    this.shoppingCart.forEach(element => {
+      if (element.amount>1) {
+        element.amount--
+      }else {this.shoppingCart.pop();
+      }
 
-
-  }
+    })};
 
   getshoppingCart(){
     return this.shoppingCart;
