@@ -5,10 +5,11 @@
   </div>
   <div class="precio">
     <div class="total"><h1># Number of orders: {{shoppingCart.length}}</h1>
+      <h1>Total platos: {{totalplatos}}</h1>
       <h1>Total to pay: ${{totalShopping}}</h1>
     </div>
     <div *ngFor="let listShop of shoppingCart">
-      <button class="buttonPed" (click)="eliminarToCart()">
+      <button class="buttonPed" (click)="eliminarToCart(listShop)">
       <img class="productosGrid" width="50px" [src]="listShop.image">
       <h4>{{listShop.name}};</h4>
       <h4>{{listShop.price}}</h4>

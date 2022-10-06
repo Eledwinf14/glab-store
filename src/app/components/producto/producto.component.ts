@@ -16,7 +16,8 @@ export class ProductoComponent implements OnInit {
       time: '',
       price: 0,
       image: '',
-      amount: 0
+      amount: 0,
+      categoria: ''
     }
 @Output() addedProduct= new EventEmitter<Producto>();
   constructor() { }

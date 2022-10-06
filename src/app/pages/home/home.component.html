@@ -24,11 +24,14 @@
         <div style="float: right;margin-left: 48%;">
           <button class="delivery"><img width="40px" src="../assets/icons/reloj.png" alt="">
             Delivery:<b>Now</b></button>
+          </div>
         </div>
-      </div>
+        <h1>{{active}}</h1>
       <div class="categorias--grid">
+        <!--<div *ngIf="shoppingCart.length === 0"><button disabled class="checkout">Checkout→</button>
+        </div> -->
         <div *ngFor="let categoria of categorias">
-          <button class="buttonC">
+          <button class="buttonC" (click)="active=categoria.name">
             <img class="imgCat" width="80px" [src]="categoria.icon">
             <p>{{categoria.name}}</p>
           </button>
@@ -36,8 +39,9 @@
       </div>
       <div class="menu" style="width: 70%;">
         <h1>Menu/dishes &nbsp;<img width="35px" src="../assets/icons/menu.png" alt=""></h1>
+
       </div>
-      <app-productos></app-productos>
+      <div *ngIf="active == 'All'"><app-productos></app-productos></div>
     </div>
     <div class="contenedorDer">
       <div style="display: flex;flex-direction: row;align-items:center;margin-left: 50%;">
@@ -47,10 +51,9 @@
       <div style="margin-top: 40%;text-align: center;">
         <h1>My Order&nbsp;<i class="em-svg em-yum" aria-role="presentation"
             aria-label="FACE SAVOURING DELICIOUS FOOD"></i>
-
         </h1>
         <div class="datosP">
-          <!--<h3>{{getUserLoggued}};</h3>-->
+          {{userlog}}
           <div class="timer"> <img class="relojA" src="../assets/images/relojA.png" alt="">
             <h3>30 min&nbsp;&nbsp;</h3>
             <h3 style="color: orange;">&nbsp;&nbsp;Approximate time </h3>
@@ -61,7 +64,6 @@
   </div>
 </div>
 <div class="side-menu">
-  <app-nav></app-nav>
   <div class="contenedorP">
     <div class="contenedorIzq">
       <div class="container2">
@@ -77,13 +79,14 @@
       </div>
       <div class="categorias--grid">
         <div *ngFor="let categoria of categorias">
-          <button class="buttonC">
+          <button class="buttonC" (click)="active=categoria.name">
             <img class="imgCat" [src]="categoria.icon">
-            <h3>{{categoria.name}}</h3>
 
+            <h3>{{categoria.name}}</h3>
           </button>
         </div>
       </div>
+      <h1>{{active}}</h1>
       <div class="pList" style="display: flex;flex-direction: column;">
         <app-productos></app-productos>
       </div>

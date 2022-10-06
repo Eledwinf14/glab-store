@@ -192,6 +192,15 @@ ul {
     text-align: start;
     align-content: flex-start;
   }
+
+  .container2 {
+    border-radius: 15px;
+    height: 180px;
+    background-color: antiquewhite;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 @media screen and (min-width: 64em) {
@@ -277,7 +286,7 @@ h1 {
       width: 100%;
       display: block;
       flex-direction: column;
-      margin: 0;
+      margin-top: -25px;
 
       .container2 {
         margin-left: 10%;

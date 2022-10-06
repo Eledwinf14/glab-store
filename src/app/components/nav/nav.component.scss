@@ -124,6 +124,7 @@ h1{
 @media screen and (min-width: 20em) and (max-width: 63.9375em) {
   .show-mobile {
     display: block;
+    width: 110%;
   }
   .hide-mobile {
     display: none;
