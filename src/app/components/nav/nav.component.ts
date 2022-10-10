@@ -14,6 +14,7 @@ export class NavComponent implements OnInit {
   counter = 0;
   userLog="";
 
+
   constructor( private storeService: StoreService,private userService:UsersService) { }
 
   ngOnInit(): void {
@@ -32,6 +33,9 @@ export class NavComponent implements OnInit {
      console.log(user.data);
     });
   }
-
+  close(){
+    this.userService.logout();
+    this.userLog = "";
+  }
 
 }

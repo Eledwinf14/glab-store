@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(user).subscribe(data => {
       this.userService.setToken(data.token);
       this.router.navigateByUrl('/home');
+      this.userService.getUserLogged();
     },
       error => {
         error = swal.fire({
